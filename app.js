@@ -1,6 +1,6 @@
 const inserirAmigo = document.getElementById('amigo');
 const listaAmigos = document.getElementById('listaAmigos'); 
-
+const sorteado = document.getElementById('resultado'); 
 
 const nomes = [];
 
@@ -19,4 +19,15 @@ function adicionarAmigo() {
        
         inserirAmigo.value = '';
         inserirAmigo.focus();
+}
+
+function sortearAmigo() {
+    if (nomes.length === 0) {
+        alert('Por favor, insira nomes na lista');
+        return;
+    }
+    const indice = Math.floor(Math.random() * nomes.length);
+    const amigoSorteado = nomes[indice];
+
+    sorteado.textContent = `Seu amigo secreto é: ${amigoSorteado}`;
 }
